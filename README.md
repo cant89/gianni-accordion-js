@@ -8,9 +8,9 @@ https://codepen.io/cant89/full/RLEoyV/
 ### INSTALL
 
 1. Add to your project
-Add <code>gianni.accordion.min.js</code> to your project including it before your closing <code>body</code> tag:
+Add <code>gianniAccordion.min.js</code> to your project including it before your closing <code>body</code> tag:
 ```
-<script type="text/javascript" src="/path/to/your/repository/gianni.accordion.min.js"></script>
+<script type="text/javascript" src="/path/to/your/repository/gianniAccordion.min.js"></script>
 ```
 
 2. Prepare your HTML:
