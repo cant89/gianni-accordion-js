@@ -5,7 +5,7 @@ It uses CSS transition in order to have a fluid and smooth movement
 ### DEMO
 https://codepen.io/cant89/full/RLEoyV/
 
-### INSTALL
+### USAGE
 
 1. Add to your project
 Add <code>gianniAccordion.min.js</code> to your project including it before your closing <code>body</code> tag:
