@@ -46,9 +46,9 @@ gianniAccordion.init({
 
 5. Enjoy with Gianni! :)
 
-### PARAMETERS
+### OPTIONS
 
-* __elements__ *(this is the only one mandatory parameter)*
+* __elements__ *(this is the only one mandatory option)*
 
   Css selector of the elements for which you want to enable accordion.
 
