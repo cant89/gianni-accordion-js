@@ -30,7 +30,7 @@ Add <code>gianniAccordion.min.js</code> to your project including it before your
 
 3. Initialize it in your script:
 ```javascript
-gianniAccordion.init({
+var myAccordion = new gianniAccordion({
   elements: '.your-accordion-element-class'
 });
 ```
@@ -89,7 +89,7 @@ It accepts two arguments:
   
 Eg:
 ```javascript
-gianniAccordion.on( "elementSelected", function elementIsSelected(data){ 
+myAccordion.on( "elementSelected", function elementIsSelected(data){ 
   // Do something 
 })
 ```

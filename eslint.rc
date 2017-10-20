@@ -1,0 +1,247 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": { "sourceType": "module" },
+	"root": true,
+	"env": {
+		"browser": true
+	},
+    "globals": {
+        "jQuery": true,
+        "$": true
+    },
+	"extends": "eslint:recommended",
+	"rules": {
+		"camelcase": [
+			2
+		],
+		"no-bitwise": [
+			2
+		],
+		"no-catch-shadow": [
+			2
+		],
+		"no-class-assign": [
+			2
+		],
+		"no-console": 0,
+		"no-const-assign": [
+			2
+		],
+		"no-debugger": [
+			1
+		],
+		"no-dupe-class-members": [
+			2
+		],
+		"no-else-return": [
+			1
+		],
+		"no-empty-pattern": [
+			2
+		],
+		"no-eq-null": [
+			2
+		],
+		"no-eval": [
+			2
+		],
+		"no-extend-native": [
+			2
+		],
+		"no-extra-bind": [
+			1
+		],
+		"no-extra-semi": [
+			2
+		],
+		"no-fallthrough": [
+			1
+		],
+		"no-implicit-coercion": [
+			2,
+			{
+				"boolean": false,
+				"number": true,
+				"string": false
+			}
+		],
+		"no-invalid-this": [
+			1
+		],
+		"no-label-var": [
+			1
+		],
+		"no-lone-blocks": [
+			1
+		],
+		"no-loop-func": [
+			2
+		],
+		"no-lonely-if": [
+			1
+		],
+		"no-multi-spaces": [
+			1
+		],
+		"no-multi-str": [
+			2
+		],
+		"no-multiple-empty-lines": [
+			1,
+			{
+				"max": 2
+			}
+		],
+		"no-native-reassign": [
+			2
+		],
+		"no-new-func": [
+			1
+		],
+		"no-new-object": [
+			1
+		],
+		"no-new-require": [
+			1
+		],
+		"no-new-wrappers": [
+			1
+		],
+		"no-return-assign": [
+			1
+		],
+		"no-self-compare": [
+			1
+		],
+		"no-shadow-restricted-names": [
+			2
+		],
+		"no-spaced-func": [
+			1
+		],
+		"no-this-before-super": [
+			1
+		],
+		"no-use-before-define": [
+			1
+		],
+		"no-with": [
+			1
+		],
+		"array-bracket-spacing": [
+			1,
+			"never"
+		],
+		"arrow-spacing": [
+			1
+		],
+		"arrow-body-style": [
+			0,
+			"as-needed"
+		],
+		"block-spacing": [
+			1
+		],
+		"brace-style": [
+			1,
+			"1tbs"
+		],
+		"key-spacing": [
+			1,
+			{
+				"beforeColon": false,
+				"afterColon": true
+			}
+		],
+		"func-style": [
+			2,
+			"declaration",
+			{
+				"allowArrowFunctions": true
+			}
+		],
+		"max-len": [
+			2,
+			180,
+			4
+		],
+		"new-cap": [
+			2
+		],
+		"prefer-template": [
+			2
+		],
+		"semi": 1,
+		"semi-spacing": [
+			1,
+			{
+				"before": false,
+				"after": true
+			}
+		],
+    "keyword-spacing": [
+      "warn",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+		"strict": [
+			2
+		],
+		"valid-jsdoc": [
+			2
+		],
+		"wrap-iife": [
+			2
+		],
+		"new-parens": [
+			2
+		],
+		"guard-for-in": [
+			2
+		],
+		"consistent-this": [
+			0,
+			"self"
+		],
+		"eqeqeq": [
+			2
+		],
+		"space-infix-ops": [
+			2,
+			{
+				"int32Hint": false
+			}
+		],
+		"no-warning-comments": [
+			0,
+			{
+				"terms": [
+					"todo",
+					"fixme",
+					"xxx"
+				],
+				"location": "start"
+			}
+		],
+		"no-case-declarations": [
+			2
+		]
+	},
+	"ecmaFeatures": {
+		"blockBindings": true,
+		"forOf": true,
+		"arrowFunctions": true,
+		"defaultParams": true,
+		"destructuring": true,
+		"modules": true,
+		"objectLiteralComputedProperties": true,
+		"objectLiteralShorthandProperties": true,
+		"objectLiteralShorthandMethods": true,
+		"restParams": true,
+		"spread": true,
+		"templateStrings": true,
+		"classes": true
+	}
+}
