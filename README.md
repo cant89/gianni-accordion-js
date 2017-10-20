@@ -8,6 +8,7 @@ https://codepen.io/cant89/full/RLEoyV/
 ### USAGE
 
 1. Add to your project
+
 Add <code>gianniAccordion.min.js</code> to your project including it before your closing <code>body</code> tag:
 ```
 <script type="text/javascript" src="/path/to/your/repository/gianniAccordion.min.js"></script>
