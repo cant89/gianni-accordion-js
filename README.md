@@ -53,7 +53,7 @@ var myAccordion = new gianniAccordion({
 
   Css selector of the elements for which you want to enable accordion.
 
-  *It is expected to have two childrens: an expandable one called "content", and the "trigger" one that manage the visibility of the "content"*
+  *It is expected to have two childrens: an expandable one that here we call "content", and the "trigger" one that manage the visibility of the "content"*
 
 * __trigger__
 
@@ -97,16 +97,20 @@ myAccordion.on( "elementSelected", function elementIsSelected(data){
 Here all the available events:
 
 * __elementSelected__
-  triggered when an element is clicked
+
+  triggered when an element is clicked (but still not opened)
 
 * __elementOpened__
-  triggered when an element is opened and the transition is ended
+
+  triggered when an element is selected and the opening transition is ended
 
 * __elementUnselected__
-  triggered when an element is unselected
+
+  triggered when an element is unselected (but still not closed)
 
 * __elementClosed__
-  triggered when an element is closed and the transition is ended
+
+  triggered when an element is unselected and the closing transition is ended
 
 
 > NOTE: this library use style.scrollHeight property to determine the height of the scrollable content of the element you pass in, so every css rule (like translateY), applied on childrens of that element, that affect the scrollable area, could be result in a wrong calculation of the height. Applied that to the element instead.
