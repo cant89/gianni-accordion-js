@@ -200,5 +200,3 @@ var gianniAccordion = (function () {
 
   }
 })();
-
-export default gianniAccordion;
