@@ -1,11 +1,11 @@
-# Gianni Accordion JS (with acccessibility)
+# Gianni Accordion JS (with accessibility)
 A tiny module to manage height transition in multiple (or even just one) elements without pain.
 It uses CSS transition in order to have a fluid and smooth movement.
 It use aria-hidden and aria-expanded to facilitate accessibility.
 It puts intermediate classes to see if the accordion is opening and to understand when and how to put display none (always for accessibility)
 
 ### DEMO
-https://codepen.io/multivoltage/pen/rRbPMM (this version with accessibility)
+https://codepen.io/multivoltage/pen/rRbPMM (this version with accssibility)
 https://codepen.io/cant89/full/RLEoyV/ (original version)
 
 ### USAGE
