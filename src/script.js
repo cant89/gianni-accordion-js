@@ -1,4 +1,4 @@
-var gianniAccordion = (function () {
+window.gianniAccordion = (function () {
   return class {
 
     transitionendEventName() {
