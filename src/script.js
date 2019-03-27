@@ -33,11 +33,11 @@ var gianniAccordion = (function () {
             el.content.style.height = null;
             el.content.style.transition = null;
 
-            this.fire("elementOpened", el);
-            el.trigger.setAttribute('aria-expanded', 'true');
-            el.content.setAttribute('aria-hidden', 'false');
+            this.setExpandedAria(el.wrapper);
             el.wrapper.classList.add(this.expandedClass);
             this.trySetTabIndex(el.content, 0)
+
+            this.fire("elementOpened", el);
           });
         });
       }
@@ -59,8 +59,7 @@ var gianniAccordion = (function () {
         if (el.isOpen) return
 
         this.fire("elementClosed", el);
-        el.trigger.setAttribute('aria-expanded', 'false');
-        el.content.setAttribute('aria-hidden', 'true');
+        this.setCollapsedAria(el.wrapper);
         el.wrapper.classList.add(this.collapsedClass);
         this.trySetTabIndex(el.content, -1)
       }
@@ -120,6 +119,16 @@ var gianniAccordion = (function () {
       }
     }
 
+    setExpandedAria(el){
+      el.querySelector(this.trigger).setAttribute('aria-expanded', 'true')
+      el.querySelector(this.content).setAttribute('aria-hidden', 'false')
+    }
+
+    setCollapsedAria(el){
+      el.querySelector(this.trigger).setAttribute('aria-expanded', 'false')
+      el.querySelector(this.content).setAttribute('aria-hidden', 'true')
+    }
+
     attachEvents() {
       this.els.forEach((el, i) => {
         el.trigger.addEventListener("click", this.toggle.bind(this, el));
@@ -156,8 +165,8 @@ var gianniAccordion = (function () {
 
     setLandinData(el) {
       el.classList.add(this.collapsedClass);
-      el.querySelector(this.trigger).setAttribute('aria-expanded', 'false')
-      el.querySelector(this.content).setAttribute('aria-hidden', 'true')
+      debugger
+      this.setCollapsedAria(el)
     }
 
     fire(eventName, el) {
@@ -188,8 +197,8 @@ var gianniAccordion = (function () {
         } else {
           element.wrapper.classList.add(this.selectedClass)
           element.wrapper.classList.add(this.expandedClass)
-          element.trigger.setAttribute('aria-expanded', 'true')
-          element.content.setAttribute('aria-hidden', 'false')
+          debugger
+          this.setExpandedAria(el);
           element.selected = true
           this.fire('elementSelected', element)
         }

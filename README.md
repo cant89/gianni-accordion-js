@@ -6,7 +6,6 @@ It puts intermediate classes to see if the accordion is opening and to understan
 
 ### DEMO
 https://codepen.io/multivoltage/pen/rRbPMM (this version with accssibility)
-https://codepen.io/cant89/full/RLEoyV/ (original version)
 
 ### USAGE
 
@@ -39,7 +38,8 @@ var myAccordion = new gianniAccordion({
   trigger: "[data-accordion-element-trigger]",
   content: "[data-accordion-element-content]",
   // collapsedHeight: '135px' -> maybe you have only one accordion and the content is partial visible
-  // selectedClass: 'my-custom-open-class' -> by default is 'open'
+  // selectedClass: 'my-custom-selected-class' -> by default is 'selected'
+  // openAtLandingIndex: 2 -> set 3rd element open at landing
 });
 ```
 
@@ -49,11 +49,7 @@ var myAccordion = new gianniAccordion({
   height: auto;
   overflow: hidden;
   transition: height .5s;
-}
-
-/** if you want to hide show body for screenreader **/
-.collapsed [data-accordion-element-content] {
-    display: none;
+  /** will-change: height; **/
 }
 ```
 
@@ -95,7 +91,13 @@ var myAccordion = new gianniAccordion({
 
   min height for the content in (ex 120px or 2rem or similar)
   
-  default is <code>selected</code>
+  default is <code>0</code>
+  
+* __openAtLandingIndex__
+
+  index of element that will be open at landing
+  
+  default is <code>-1</code>
 
 ### EVENTS
 
