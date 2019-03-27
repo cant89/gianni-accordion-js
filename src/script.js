@@ -33,7 +33,7 @@ var gianniAccordion = (function () {
             el.content.style.height = null;
             el.content.style.transition = null;
 
-            this.setExpandedAria(el.wrapper);
+            this.setExpandedAria(el);
             el.wrapper.classList.add(this.expandedClass);
             this.trySetTabIndex(el.content, 0)
 
@@ -59,7 +59,7 @@ var gianniAccordion = (function () {
         if (el.isOpen) return
 
         this.fire("elementClosed", el);
-        this.setCollapsedAria(el.wrapper);
+        this.setCollapsedAria(el);
         el.wrapper.classList.add(this.collapsedClass);
         this.trySetTabIndex(el.content, -1)
       }
@@ -120,13 +120,13 @@ var gianniAccordion = (function () {
     }
 
     setExpandedAria(el){
-      el.querySelector(this.trigger).setAttribute('aria-expanded', 'true')
-      el.querySelector(this.content).setAttribute('aria-hidden', 'false')
+      el.trigger.setAttribute('aria-expanded', 'true')
+      el.content.setAttribute('aria-hidden', 'false')
     }
 
     setCollapsedAria(el){
-      el.querySelector(this.trigger).setAttribute('aria-expanded', 'false')
-      el.querySelector(this.content).setAttribute('aria-hidden', 'true')
+      el.trigger.setAttribute('aria-expanded', 'false')
+      el.content.setAttribute('aria-hidden', 'true')
     }
 
     attachEvents() {
@@ -163,12 +163,6 @@ var gianniAccordion = (function () {
       }
     }
 
-    setLandinData(el) {
-      el.classList.add(this.collapsedClass);
-      debugger
-      this.setCollapsedAria(el)
-    }
-
     fire(eventName, el) {
       var callbacks = this.events[eventName];
       for (var i = 0; i < callbacks.length; i++) {
@@ -183,24 +177,28 @@ var gianniAccordion = (function () {
 
     constructor(data) {
       this.setDefaultData();
-      this.setCustomData(data); // ES6 => Object.assign(this, data)
+      this.setCustomData(data);  // ES6 => Object.assign(this, data)
+
       [].forEach.call(document.querySelectorAll(this.elements), (el, i) => {
         this.els.push({
           wrapper: el,
           trigger: el.querySelector(this.trigger),
           content: el.querySelector(this.content)
         });
+        
         const element = this.els[i]
+
         if (this.openAtLandingIndex !== i) {
           element.content.style.height = this.collapsedHeight
-          this.setLandinData(el)
+          element.wrapper.classList.add(this.collapsedClass);
+          this.setCollapsedAria(element)
+
         } else {
+          element.selected = true
           element.wrapper.classList.add(this.selectedClass)
           element.wrapper.classList.add(this.expandedClass)
-          debugger
-          this.setExpandedAria(el);
-          element.selected = true
-          this.fire('elementSelected', element)
+          this.setExpandedAria(element);
+          this.fire('elementSelectedAtLanding', element)
         }
       });
 

@@ -2,10 +2,10 @@
 A tiny module to manage height transition in multiple (or even just one) elements without pain.
 It uses CSS transition in order to have a fluid and smooth movement.
 It use aria-hidden and aria-expanded to facilitate accessibility.
-It puts intermediate classes to see if the accordion is opening and to understand when and how to put display none (always for accessibility)
+It puts intermediate classes to see if the accordion is opening and to understand when and how to put display none (also for accessibility)
 
 ### DEMO
-https://codepen.io/multivoltage/pen/rRbPMM (this version with accssibility)
+https://codepen.io/cant89/pen/RLEoyV
 
 ### USAGE
 
@@ -95,7 +95,7 @@ var myAccordion = new gianniAccordion({
   
 * __openAtLandingIndex__
 
-  index of element that will be open at landing
+  index of the element that will be opened at landing
   
   default is <code>-1</code>
 
@@ -117,19 +117,22 @@ Here all the available events:
 
 * __elementSelected__
 
-  triggered when an element is clicked (but still not opened)
+  fired when an element is clicked (but still not opened)
 
 * __elementOpened__
 
-  triggered when an element is selected and the opening transition is ended
+  fired when an element is selected and the opening transition is ended
 
 * __elementUnselected__
 
-  triggered when an element is unselected (but still not closed)
+  fired when an element is unselected (but still not closed)
 
 * __elementClosed__
 
-  triggered when an element is unselected and the closing transition is ended
+  fired when an element is unselected and the closing transition is ended
 
+* __elementSelectedAtLanding__
+
+  fired when an element is selected at landing (triggered by the openAtLandingIndex option)
 
 > NOTE: this library use style.scrollHeight property to determine the height of the scrollable content of the element you pass in, so every css rule (like translateY), applied on childrens of that element, that affect the scrollable area, could be result in a wrong calculation of the height. Applied that to the element instead.
