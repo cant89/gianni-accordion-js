@@ -1,9 +1,11 @@
-# Gianni Accordion JS
+# Gianni Accordion JS (with accessibility)
 A tiny module to manage height transition in multiple (or even just one) elements without pain.
-It uses CSS transition in order to have a fluid and smooth movement
+It uses CSS transition in order to have a fluid and smooth movement.
+It use aria-hidden and aria-expanded to facilitate accessibility.
+It puts intermediate classes to see if the accordion is opening and to understand when and how to put display none (always for accessibility)
 
 ### DEMO
-https://codepen.io/cant89/full/RLEoyV/
+https://codepen.io/multivoltage/pen/rRbPMM (this version with accssibility)
 
 ### USAGE
 
@@ -32,7 +34,12 @@ Add <code>gianniAccordion.min.js</code> to your project including it before your
 3. Initialize it in your script:
 ```javascript
 var myAccordion = new gianniAccordion({
-  elements: '.your-accordion-element-class'
+  elements: '.your-accordion-element-class',          
+  trigger: "[data-accordion-element-trigger]",
+  content: "[data-accordion-element-content]",
+  // collapsedHeight: '135px' -> maybe you have only one accordion and the content is partial visible
+  // selectedClass: 'my-custom-selected-class' -> by default is 'selected'
+  // openAtLandingIndex: 2 -> set 3rd element open at landing
 });
 ```
 
@@ -42,6 +49,7 @@ var myAccordion = new gianniAccordion({
   height: auto;
   overflow: hidden;
   transition: height .5s;
+  /** will-change: height; **/
 }
 ```
 
@@ -78,8 +86,19 @@ var myAccordion = new gianniAccordion({
   Css Class added to the element when it is selected
   
   default is <code>selected</code>
-    
- 
+
+* __collapsedHeight__
+
+  min height for the content in (ex 120px or 2rem or similar)
+  
+  default is <code>0</code>
+  
+* __openAtLandingIndex__
+
+  index of element that will be open at landing
+  
+  default is <code>-1</code>
+
 ### EVENTS
 
 You can listen for events using the .on() method.
