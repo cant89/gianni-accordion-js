@@ -141,7 +141,8 @@ window.gianniAccordion = (function () {
         'elementSelected': [],
         'elementOpened': [],
         'elementUnselected': [],
-        'elementClosed': []
+        'elementClosed': [],
+        'elementSelectedAtLanding': []
       };
       this.transitionendevent = this.transitionendEventName();
       this.oneAtATime = true;
